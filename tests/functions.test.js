@@ -16,15 +16,19 @@ describe("Calculator", () => {
         });
 
         test("should throw an error if the first variable is not a number", () => {
-            expect(add("10", 5)).toBe("You must enter numbers.");
+            expect(() => add("10", 5)).toThrow(new Error("You must enter two numbers"));
         });
 
         test("should throw an error if the second variable is not a number", () => {
-            expect(add(10, "5")).toBe("You must enter numbers.");
+            expect(() => add(10, "5")).toThrow(new Error("You must enter two numbers"));
         });
 
         test("should throw an error if both variables are not numbers", () => {
-            expect(add("test", "5")).toBe("You must enter numbers.");
+            expect(() => add("test", "5")).toThrow(new Error("You must enter two numbers"));
+        });
+
+        test("should throw an error if not enough variables entered", () => {
+            expect(() => add(5)).toThrow(new Error("You only entered one input, you must enter two numbers."));
         });
     });
 
@@ -47,15 +51,19 @@ describe("Calculator", () => {
         });
 
         test("should throw an error if the first variable is not a number", () => {
-            expect(subtract("10", 5)).toBe("You must enter numbers.");
+            expect(() => subtract("10", 5)).toThrow(new Error("You must enter two numbers"));
         });
 
         test("should throw an error if the second variable is not a number", () => {
-            expect(subtract(10, "5")).toBe("You must enter numbers.");
+            expect(() => subtract(10, "5")).toThrow(new Error("You must enter two numbers"));
         });
 
         test("should throw an error if both variables are not numbers", () => {
-            expect(subtract("test", "5")).toBe("You must enter numbers.");
+            expect(() => subtract("test", "5")).toThrow(new Error("You must enter two numbers"));
+        });
+
+        test("should throw an error if not enough variables entered", () => {
+            expect(() => subtract(5)).toThrow(new Error("You only entered one input, you must enter two numbers."));
         });
     });
 
@@ -82,15 +90,19 @@ describe("Calculator", () => {
         });
 
         test("should throw an error if the first variable is not a number", () => {
-            expect(multiply("10", 5)).toBe("You must enter numbers.");
+            expect(() => multiply("10", 5)).toThrow(new Error("You must enter two numbers"));
         });
 
         test("should throw an error if the second variable is not a number", () => {
-            expect(multiply(10, "5")).toBe("You must enter numbers.");
+            expect(() => multiply(10, "5")).toThrow(new Error("You must enter two numbers"));
         });
 
         test("should throw an error if both variables are not numbers", () => {
-            expect(multiply("test", "5")).toBe("You must enter numbers.");
+            expect(() => multiply("test", "5")).toThrow(new Error("You must enter two numbers"));
+        });
+
+        test("should throw an error if not enough variables entered", () => {
+            expect(() => multiply(5)).toThrow(new Error("You only entered one input, you must enter two numbers."));
         });
     });
 
@@ -121,15 +133,19 @@ describe("Calculator", () => {
         });
 
         test("should throw an error if the first variable is not a number", () => {
-            expect(divide("10", 5)).toBe("You must enter numbers.");
+            expect(() => divide("10", 5)).toThrow(new Error("You must enter two numbers"));
         });
 
         test("should throw an error if the second variable is not a number", () => {
-            expect(divide(10, "5")).toBe("You must enter numbers.");
+            expect(() => divide(10, "5")).toThrow(new Error("You must enter two numbers"));
         });
 
         test("should throw an error if both variables are not numbers", () => {
-            expect(divide("test", "5")).toBe("You must enter numbers.");
+            expect(() => divide("test", "5")).toThrow(new Error("You must enter two numbers"));
+        });
+
+        test("should throw an error if not enough variables entered", () => {
+            expect(() => divide(5)).toThrow(new Error("You only entered one input, you must enter two numbers."));
         });
     });
 })
